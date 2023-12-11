@@ -3,7 +3,7 @@ class ArtistsProfilesController < ApplicationController
 
   # GET /artists_profiles
   def index
-    @artists_profiles = ArtistsProfile.all
+    @artists_profiles = ArtistsProfileService.listAll
 
     render json: @artists_profiles
   end
@@ -15,37 +15,44 @@ class ArtistsProfilesController < ApplicationController
 
   # POST /artists_profiles
   def create
-    @artists_profile = ArtistsProfile.new(artists_profile_params)
+    artists_profile = ArtistsProfileService.save(artists_profile_params)
 
-    if @artists_profile.save
-      render json: @artists_profile, status: :created, location: @artists_profile
+    if ArtistsProfileRepository.where(id: artists_profile.id).length == 1
+      render json: artists_profile, status: :created, location: artists_profile
     else
-      render json: @artists_profile.errors, status: :unprocessable_entity
+      render json: artists_profile.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /artists_profiles/1
   def update
+    # getting the target profile
+    @artists_profile = ArtistsProfileService.get(params)
+    # updating the target profile
+    updated_artists_profile = ArtistsProfileService.update(@artists_profile, artists_profile_params)
+    # verifying update success
     if @artists_profile.update(artists_profile_params)
+      # returning updated details as JSON
       render json: @artists_profile
     else
+      # returning error message as json
       render json: @artists_profile.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /artists_profiles/1
   def destroy
-    @artists_profile.destroy
+    ArtistsProfileService.delete(params)
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_artists_profile
-      @artists_profile = ArtistsProfile.find(params[:id])
+      @artists_profile = ArtistsProfileService.get(params)
     end
 
     # Only allow a list of trusted parameters through.
     def artists_profile_params
-      params.require(:artists_profile).permit(:artist_id, :artist_image, :image_public_id, :bio)
+      params.permit(:artist_id, :artist_image, :image_public_id, :bio)
     end
 end

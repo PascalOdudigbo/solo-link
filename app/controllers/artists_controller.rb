@@ -10,7 +10,7 @@ class ArtistsController < ApplicationController
 
   # GET /artists/1
   def show
-    render json: @artist
+    render json: @artist, include: ['artists_profile', 'artists_social', ['projects', 'projects.project_videos']]
   end
 
   # POST /artists
@@ -61,7 +61,7 @@ class ArtistsController < ApplicationController
 
   # GET /artists_logged_in
   def check_artist_logged_in
-    render json:  ArtistService.logged_in(session)
+    render json:  ArtistService.logged_in(session), include: ['artists_profile', 'artists_social', ['projects', 'projects.project_videos']]
   end
 
   #POST /artists_recover_account
