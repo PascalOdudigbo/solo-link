@@ -3,9 +3,10 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
-    @projects = Project.all
+    @projects = ProjectService.listAll
 
-    render json: @projects
+    # Order the projects by time created
+    render json: @projectsorder(created_at: :desc)
   end
 
   # GET /projects/1
@@ -15,7 +16,7 @@ class ProjectsController < ApplicationController
 
   # POST /projects
   def create
-    @project = Project.new(project_params)
+    @project = ProjectService.save(project_params)
 
     if @project.save
       render json: @project, status: :created, location: @project
@@ -26,6 +27,8 @@ class ProjectsController < ApplicationController
 
   # PATCH/PUT /projects/1
   def update
+    @project = ProjectService.get(params)
+    updated_project = ProjectService.update(@project, project_params)
     if @project.update(project_params)
       render json: @project
     else
@@ -35,17 +38,17 @@ class ProjectsController < ApplicationController
 
   # DELETE /projects/1
   def destroy
-    @project.destroy
+    ProjectService.delete(params)
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Project.find(params[:id])
+      @project = ProjectService.get(params)
     end
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:artist_id, :title, :project_url, :cover_art, :cover_art_public_id)
+      params.permit(:artist_id, :title, :project_url, :cover_art, :cover_art_public_id)
     end
 end
