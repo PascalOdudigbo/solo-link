@@ -3,7 +3,7 @@ class ArtistsSocialsController < ApplicationController
 
   # GET /artists_socials
   def index
-    @artists_socials = ArtistsSocial.all
+    @artists_socials = ArtistsSocialService.listAll
 
     render json: @artists_socials
   end
@@ -15,7 +15,7 @@ class ArtistsSocialsController < ApplicationController
 
   # POST /artists_socials
   def create
-    @artists_social = ArtistsSocial.new(artists_social_params)
+    @artists_social = ArtistsSocialService.save(artists_social_params)
 
     if @artists_social.save
       render json: @artists_social, status: :created, location: @artists_social
@@ -26,6 +26,8 @@ class ArtistsSocialsController < ApplicationController
 
   # PATCH/PUT /artists_socials/1
   def update
+    @artists_social = ArtistsSocialService.get(params)
+    updated_artists_social = ArtistsSocialService.update(@artists_social, artists_social_params)
     if @artists_social.update(artists_social_params)
       render json: @artists_social
     else
@@ -35,17 +37,17 @@ class ArtistsSocialsController < ApplicationController
 
   # DELETE /artists_socials/1
   def destroy
-    @artists_social.destroy
+    ArtistsSocialService.delete(params)
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_artists_social
-      @artists_social = ArtistsSocial.find(params[:id])
+      @artists_social = ArtistsSocialService.get(params)
     end
 
     # Only allow a list of trusted parameters through.
     def artists_social_params
-      params.require(:artists_social).permit(:artist_id, :instagram, :tiktok, :twitter, :facebook, :youtube)
+      params.permit(:artist_id, :instagram, :tiktok, :twitter, :facebook, :youtube)
     end
 end
