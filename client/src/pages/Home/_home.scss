@@ -112,3 +112,166 @@
         }
     }
 }
+
+
+@media screen and (max-width: 2000px) {
+    .home_wrapper {
+        background-size: 100% 70%;
+
+        .home_logo_and_links_wrapper {
+            width: 30%;
+            margin-top: 15%;
+
+            .home_logo {
+                width: 90px;
+            }
+
+            .home_links_container {
+                .home_login_link {
+                    padding: 8px 10px;
+                    font-size: 0.9em;
+                    height: 40px;
+                }
+
+                .home_sign_up_link {
+                    padding: 8px 10px;
+                    font-size: 0.9em;
+                    height: 40px;
+                }
+            }
+        }
+
+        .home_page_body {
+            margin-top: 8%;
+            margin-left: 5px;
+            margin-right: 5px;
+
+            .home_heading {
+                font-size: 40px;
+            }
+
+            .home_body_text {
+                margin-top: 30px;
+                letter-spacing: 0.32px;
+                font-size: 20px;
+            }
+        }
+
+        .home_get_started_link {
+            padding: 12px 10px;
+
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .home_wrapper {
+        background-size: 100% 55%;
+
+        .home_logo_and_links_wrapper {
+            width: 40%;
+            margin-top: 15%;
+
+            .home_logo {
+                width: 90px;
+            }
+
+            .home_links_container {
+                .home_login_link {
+                    padding: 8px 10px;
+                    font-size: 0.8em;
+                    height: 40px;
+                }
+
+                .home_sign_up_link {
+                    padding: 8px 10px;
+                    font-size: 0.8em;
+                    height: 40px;
+                }
+            }
+        }
+
+        .home_page_body {
+            margin-top: 15%;
+            margin-left: 5px;
+            margin-right: 5px;
+
+            .home_heading {
+                font-size: 30px;
+                line-height: 25px;
+                letter-spacing: 0.04em;
+                box-shadow: none;
+                background-color: transparent;
+                background-image: none;
+                color: var(--color-red);
+            }
+
+            .home_body_text {
+                margin-top: 30px;
+                letter-spacing: 0.32px;
+                font-size: 20px;
+            }
+        }
+
+        .home_get_started_link {
+            padding: 12px 10px;
+
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .home_wrapper {
+        background-size: 100% 35%;
+
+        .home_logo_and_links_wrapper {
+            width: 85%;
+            margin-top: 15%;
+
+            .home_logo {
+                width: 100px;
+            }
+
+            .home_links_container {
+                .home_login_link {
+                    padding: 8px 10px;
+                    font-size: 0.8em;
+                    height: 40px;
+                }
+
+                .home_sign_up_link {
+                    padding: 8px 10px;
+                    font-size: 0.8em;
+                    height: 40px;
+                }
+            }
+        }
+
+        .home_page_body {
+            margin-top: 15%;
+            margin-left: 5px;
+            margin-right: 5px;
+
+            .home_heading {
+                font-size: 22px;
+                line-height: 25px;
+                letter-spacing: 0.04em;
+                box-shadow: none;
+                background-color: transparent;
+                background-image: none;
+                color: var(--color-red);
+            }
+
+            .home_body_text {
+                margin-top: 30px;
+                letter-spacing: 0.32px;
+                font-size: 15px;
+            }
+        }
+
+        .home_get_started_link {
+            padding: 12px 10px;
+
+        }
+    }
+}
