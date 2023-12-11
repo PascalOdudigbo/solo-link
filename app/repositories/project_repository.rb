@@ -3,7 +3,7 @@ class ProjectRepository
     def self.all
         Project.all
     end
-     
+
     # A function to create a project
     def self.create(project_params)
         Project.create(project_params)
@@ -31,7 +31,7 @@ class ProjectRepository
 
     # A function to delete a project
     def self.delete_by_id(project_id)
-        project = ArtistsProfile.find(project_id)
+        project = Project.find(project_id)
         project.destroy
     end
  
