@@ -25,10 +25,6 @@ function Home() {
 
             <Link className="custom__button home_get_started_link" to={"/signUp"}>Get started for free</Link>
 
-            <div className="footerContainer">
-                
-            </div>
-
         </div>
 
     )
