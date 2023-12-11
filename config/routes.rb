@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :projects
   resources :artists_socials
   resources :artists_profiles
   resources :artists

@@ -3,19 +3,19 @@ class ArtistsProfileService
         ArtistsProfileRepository.all
     end
 
-    def self.save(artist_params)
-        ArtistsProfileRepository.create(artist_params)
+    def self.save(artists_profile_params)
+        ArtistsProfileRepository.create(artists_profile_params)
     end 
 
-    def self.get(artist_params)
-        ArtistsProfileRepository.find_by_id(artist_params[:id])
+    def self.get(artists_profile_params)
+        ArtistsProfileRepository.find_by_id(artists_profile_params[:id])
     end
 
-    def self.update(artist, artist_params)
-        ArtistsProfileRepository.update_attributes(artist, artist_params)
+    def self.update(artists_profile, artists_profile_params)
+        ArtistsProfileRepository.update_attributes(artists_profile, artists_profile_params)
     end
 
-    def self.delete(artist_params)
-        ArtistsProfileRepository.delete_by_id(artist_params[:id])
+    def self.delete(artists_profile_params)
+        ArtistsProfileRepository.delete_by_id(artists_profile_params[:id])
     end  
 end
