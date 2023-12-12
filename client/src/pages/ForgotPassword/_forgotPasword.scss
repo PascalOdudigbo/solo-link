@@ -1,0 +1,462 @@
+.forgotPasswordContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../assets/background-image-1.jpg");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  background-color: var(--color-white);
+
+  .forgotPasswordLogoAndLinksContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-red);
+    width: 20%;
+    border-radius: 50px;
+    justify-content: space-between;
+    margin-top: 35vh;
+    margin-bottom: 25px;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+    background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+
+    .forgotPasswordLogo {
+      cursor: pointer;
+      width: 120px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 100%;
+      margin-left: 15px;
+      box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+
+    }
+
+    .forgotPasswordLinksContainer {
+      display: flex;
+      flex-direction: row;
+      margin-right: 20px;
+      align-items: center;
+      height: 50px;
+
+      .forgotPasswordLoginLink {
+        background-color: white;
+        color: var(--color-black);
+        padding: 10px 12px;
+        border-radius: 10px;
+        text-align: center;
+        height: 50px;
+        margin-right: 25px;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+
+        &:hover {
+          background-color: black;
+          color: white;
+          box-shadow: #D6D6E7 0 3px 7px inset;
+          transform: translateY(2px);
+        }
+      }
+
+      .forgotPasswordSignUpLink {
+        background-color: white;
+        color: var(--color-black);
+        padding: 10px 12px;
+        border-radius: 10px;
+        text-align: center;
+        height: 50px;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+
+        &:hover {
+          background-color: black;
+          color: white;
+          box-shadow: #D6D6E7 0 3px 7px inset;
+          transform: translateY(2px);
+        }
+      }
+    }
+  }
+
+  .forgotPasswordBody {
+    text-align: center;
+
+    .forgot_password_heading {
+      text-transform: uppercase !important;
+      background-color: var(--color-black);
+      color: var(--color-white);
+
+      box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+      background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+      box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+    }
+
+    .forgot_password_body_text {
+      margin-bottom: 30px;
+      margin-top: 65px;
+      font-size: 1.4em;
+    }
+  }
+
+  .forgotPasswordForm {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 20px 20px 20px;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: #feffff;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+
+    .forgotPasswordFormTextAndInputContainer {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+      border-radius: 5px;
+      margin-bottom: 15px;
+
+      &:hover {
+        border: solid rgb(240, 240, 240) 2px;
+      }
+
+      .forgotPasswordFormText {
+        text-align: left;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        margin-left: 5px;
+        font-size: 0.8em;
+        color: rgb(34, 34, 34);
+        padding: 0%;
+
+      }
+
+      .forgotPasswordFormInput {
+        border: none;
+        height: 30px;
+        // margin-top: none;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1px;
+        font-size: 1.2em;
+        background-color: transparent;
+
+        &:focus {
+          outline: none;
+          background-color: transparent;
+        }
+
+      }
+    }
+
+    .submitBtn {
+      padding: 12px 10px;
+      border-radius: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 30%;
+      background-color: #ff1616;
+      box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #bb1616 0 -3px 0 inset;
+
+
+      &:hover {
+        cursor: pointer;
+        background-color: black;
+        box-shadow: #D6D6E7 0 3px 7px inset;
+        transform: translateY(2px);
+      }
+    }
+  }
+
+  .footerContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    // align-self: flex-start;
+    bottom: 0;
+    align-self: flex-end;
+  }
+}
+
+
+@media screen and (max-width: 2000px) {
+  .forgotPasswordContainer {
+    background-size: 100% 90%;
+
+
+    .forgotPasswordLogoAndLinksContainer {
+      width: 22%;
+      margin-top: 9%;
+
+      .forgotPasswordLogo {
+        width: 100px;
+      }
+
+      .forgotPasswordLinksContainer {
+
+        .forgotPasswordLoginLink {
+          padding: 8px 10px;
+          font-size: 0.9em;
+          height: 40px;
+        }
+
+        .forgotPasswordSignUpLink {
+          padding: 8px 10px;
+          font-size: 0.9em;
+          height: 40px;
+        }
+      }
+    }
+
+    .forgotPasswordBody {
+      margin-top: 8%;
+      margin-left: 5px;
+      margin-right: 5px;
+
+      .forgot_password_heading {
+        font-size: 50px;
+      }
+
+      .forgot_password_body_text {
+        margin-top: 30px;
+                letter-spacing: 0.32px;
+                font-size: 25px;
+      }
+    }
+
+    .forgotPasswordForm {
+      width: 30%;
+
+      .forgotPasswordFormTextAndInputContainer {
+
+        .forgotPasswordFormText {
+          font-weight: 600;
+        }
+
+        .forgotPasswordFormInput {
+          font-size: 1em;
+        }
+      }
+
+      .submitBtn {
+        padding: 10px 8px;
+        width: 25%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .forgotPasswordContainer {
+    background-size: 100% 70%;
+
+
+    .forgotPasswordLogoAndLinksContainer {
+      width: 30%;
+      margin-top: 15%;
+
+      .forgotPasswordLogo {
+        width: 90px;
+      }
+
+      .forgotPasswordLinksContainer {
+
+        .forgotPasswordLoginLink {
+          padding: 8px 10px;
+          font-size: 0.9em;
+          height: 40px;
+        }
+
+        .forgotPasswordSignUpLink {
+          padding: 8px 10px;
+          font-size: 0.9em;
+          height: 40px;
+        }
+      }
+    }
+
+    .forgotPasswordBody {
+      margin-top: 8%;
+      margin-left: 5px;
+      margin-right: 5px;
+
+      .forgot_password_heading {
+        font-size: 40px;
+      }
+
+      .forgot_password_body_text {
+        margin-top: 30px;
+                letter-spacing: 0.32px;
+                font-size: 20px;
+      }
+    }
+
+    .forgotPasswordForm {
+      width: 40%;
+
+      .forgotPasswordFormTextAndInputContainer {
+
+        .forgotPasswordFormText {
+          font-weight: 600;
+        }
+
+        .forgotPasswordFormInput {
+          font-size: 1em;
+        }
+      }
+
+      .submitBtn {
+        padding: 10px 8px;
+        width: 25%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .forgotPasswordContainer {
+    background-size: 100% 55%;
+
+
+    .forgotPasswordLogoAndLinksContainer {
+      width: 40%;
+      margin-top: 15%;
+
+      .forgotPasswordLogo {
+        width: 90px;
+      }
+
+      .forgotPasswordLinksContainer {
+
+        .forgotPasswordLoginLink {
+          padding: 8px 10px;
+          font-size: 0.8em;
+          height: 40px;
+        }
+
+        .forgotPasswordSignUpLink {
+          padding: 8px 10px;
+          font-size: 0.8em;
+          height: 40px;
+        }
+      }
+    }
+
+    .forgotPasswordBody {
+      margin-top: 8%;
+      margin-left: 5px;
+      margin-right: 5px;
+
+      .forgot_password_heading {
+        font-size: 35px;
+                letter-spacing: 0.04em;
+      }
+
+      .forgot_password_body_text {
+        margin-top: 30px;
+                letter-spacing: 0.32px;
+                font-size: 20px;
+      }
+    }
+
+    .forgotPasswordForm {
+      width: 50%;
+
+      .forgotPasswordFormTextAndInputContainer {
+
+        .forgotPasswordFormText {
+          font-weight: 600;
+        }
+
+        .forgotPasswordFormInput {
+          font-size: 1em;
+        }
+      }
+
+      .submitBtn {
+        padding: 10px 8px;
+        width: 30%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .forgotPasswordContainer {
+    background-size: 100% 35%;
+
+
+    .forgotPasswordLogoAndLinksContainer {
+      width: 80%;
+      margin-top: 15%;
+
+      .forgotPasswordLogo {
+        width: 100px;
+      }
+
+      .forgotPasswordLinksContainer {
+
+        .forgotPasswordLoginLink {
+          padding: 8px 10px;
+          font-size: 0.8em;
+          height: 40px;
+        }
+
+        .forgotPasswordSignUpLink {
+          padding: 8px 10px;
+          font-size: 0.8em;
+          height: 40px;
+        }
+      }
+    }
+
+    .forgotPasswordBody {
+      margin-top: 15%;
+      margin-left: 5px;
+      margin-right: 5px;
+
+      .forgot_password_heading {
+        font-size: 22px;
+        line-height: 25px;
+        letter-spacing: 0.04em;
+        box-shadow: none;
+        background-color: transparent;
+        background-image: none;
+        color: var(--color-red);
+      }
+
+      .forgot_password_body_text {
+        margin-top: 30px;
+                letter-spacing: 0.32px;
+                font-size: 15px;
+      }
+    }
+
+    .forgotPasswordForm {
+      width: 80%;
+
+      .forgotPasswordFormTextAndInputContainer {
+
+        .forgotPasswordFormText {
+          font-weight: 600;
+        }
+
+        .forgotPasswordFormInput {
+          font-size: 1em;
+        }
+      }
+
+      .submitBtn {
+        padding: 10px 8px;
+        width: 30%;
+      }
+    }
+  }
+}
