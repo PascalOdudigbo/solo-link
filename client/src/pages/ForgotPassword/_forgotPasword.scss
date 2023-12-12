@@ -138,7 +138,6 @@
       .forgotPasswordFormInput {
         border: none;
         height: 30px;
-        // margin-top: none;
         width: 90%;
         margin-left: auto;
         margin-right: auto;
@@ -171,17 +170,6 @@
         transform: translateY(2px);
       }
     }
-  }
-
-  .footerContainer {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: fit-content;
-    position: relative;
-    // align-self: flex-start;
-    bottom: 0;
-    align-self: flex-end;
   }
 }
 

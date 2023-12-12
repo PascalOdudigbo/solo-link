@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import { ConfirmEmail, ForgotPassword, Home, Login, SignUp } from './pages'
+import { ConfirmEmail, ForgotPassword, Home, Login, ResetPassword, SignUp } from './pages'
 import { Footer, Alert } from './components'
 import emailjs from "@emailjs/browser";
 
@@ -132,6 +132,19 @@ function App() {
                         />
                     }
                 />
+                <Route
+                    path="/reset-password/*"
+                    element={
+                        <ResetPassword
+                            hideAlert={hideAlert}
+                            setAlertDisplay={setAlertDisplay}
+                            setAlertStatus={setAlertStatus}
+                            setAlertMessage={setAlertMessage}
+                        />
+                    }
+                />
+
+                
 
 
             </Routes>
