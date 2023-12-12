@@ -1,0 +1,324 @@
+.login_component_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../assets/background-image-1.jpg");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  background-color: var(--color-white);
+
+  .login_form_Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: var(--color-white);
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+
+    .login_logo {
+      margin-top: 10px;
+      width: 100px;
+      border-radius: 55%;
+      margin-bottom: 20px;
+      box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+      cursor: pointer;
+    }
+
+    .login_text {
+      margin-bottom: 10px;
+      color: var(--color-black);
+    }
+
+    .login_form {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      width: 80%;
+      margin-bottom: 20px;
+
+      .loginFormTextAndInputContainer {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        // box-shadow: 1px 1px 1px 1px rgb(207, 207, 207);
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        border-radius: 5px;
+        margin-bottom: 15px;
+
+        &:hover {
+          border: solid rgb(240, 240, 240) 2px;
+        }
+
+        .loginFormText {
+          text-align: left;
+          margin-top: 5px;
+          margin-bottom: 0px;
+          margin-left: 5px;
+          font-size: 0.8em;
+          color: rgb(34, 34, 34);
+          padding: 0%;
+
+        }
+
+        .loginFormInput {
+          border: none;
+          height: 30px;
+          // margin-top: none;
+          width: 98%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 1px;
+          font-size: 1.2em;
+          background-color: transparent;
+
+          &:focus {
+            outline: none;
+            background-color: transparent;
+          }
+
+        }
+      }
+
+      .forgot_password_link {
+        font-size: 0.9em;
+        text-decoration: none;
+        margin-bottom: 10px;
+        margin-top: 5px;
+
+        &:hover{
+          color: var(--color-red)
+        }
+      }
+
+      .login_btn {
+        padding: 15px 12px;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+        background-color: #ff1616;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #bb1616 0 -3px 0 inset;
+
+
+        &:hover {
+          cursor: pointer;
+          background-color: black;
+          box-shadow: #D6D6E7 0 3px 7px inset;
+          transform: translateY(2px);
+        }
+      }
+
+      .or_text {
+        color: black;
+        text-align: center;
+        font-weight: bolder;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .sign_up_link {
+        color: white;
+        padding: 15px 12px;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        font-size: 1em;
+        background-color: black;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgb(61, 61, 61) 0 -3px 0 inset;
+
+
+        &:hover {
+          background-color: #ff1616;
+          box-shadow: #D6D6E7 0 3px 7px inset;
+          transform: translateY(2px);
+        }
+      }
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 2000px) {
+  .login_component_container {
+    background-size: 100% 90%;
+   
+    .login_form_Container {
+      width: 40%;
+  
+      .login_logo {
+        width: 100px;
+      }
+  
+      .login_form {
+        width: 90%;
+  
+        .loginFormTextAndInputContainer {
+  
+          .loginFormText {
+           font-weight: 600;
+          }
+  
+          .loginFormInput {
+            font-size: 1.2em;
+          }
+        }
+  
+        .login_btn {
+          padding: 10px 8px;
+          width: 25%;
+        }
+  
+        .or_text {
+          
+        }
+  
+        .sign_up_link {
+          padding: 10px 8px;
+          width: 30%;
+        }
+      }
+    }
+  
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .login_component_container {
+    background-size: 100% 70%;
+   
+    .login_form_Container {
+      width: 50%;
+  
+      .login_logo {
+        width: 80px;
+      }
+  
+      .login_form {
+        width: 90%;
+  
+        .loginFormTextAndInputContainer {
+  
+          .loginFormText {
+           font-weight: 600;
+          }
+  
+          .loginFormInput {
+            font-size: 1.2em;
+          }
+        }
+  
+        .login_btn {
+          padding: 10px 8px;
+          width: 35%;
+        }
+  
+        .or_text {
+          
+        }
+  
+        .sign_up_link {
+          padding: 10px 8px;
+          width: 45%;
+        }
+      }
+    }
+  
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .login_component_container {
+    background-size: 100% 60%;
+   
+    .login_form_Container {
+      width: 60%;
+  
+      .login_logo {
+        width: 80px;
+      }
+  
+      .login_form {
+        width: 90%;
+  
+        .loginFormTextAndInputContainer {
+  
+          .loginFormText {
+           font-weight: 600;
+          }
+  
+          .loginFormInput {
+            font-size: 1.2em;
+          }
+        }
+  
+        .login_btn {
+          padding: 10px 8px;
+          width: 35%;
+        }
+  
+        .or_text {
+          
+        }
+  
+        .sign_up_link {
+          padding: 10px 8px;
+          width: 45%;
+        }
+      }
+    }
+  
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .login_component_container {
+    background-size: 100% 40%;
+   
+    .login_form_Container {
+      width: 90%;
+  
+      .login_logo {
+        width: 80px;
+      }
+  
+      .login_form {
+        width: 90%;
+  
+        .loginFormTextAndInputContainer {
+  
+          .loginFormText {
+           font-weight: 600;
+          }
+  
+          .loginFormInput {
+            font-size: 1em;
+          }
+        }
+  
+        .login_btn {
+          padding: 10px 8px;
+          width: 35%;
+        }
+  
+        .or_text {
+          
+        }
+  
+        .sign_up_link {
+          padding: 10px 8px;
+          width: 45%;
+        }
+      }
+    }
+  
+  }
+}

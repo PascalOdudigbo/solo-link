@@ -118,7 +118,7 @@
         background-size: 100% 90%;
 
         .home_logo_and_links_wrapper {
-            width: 25%;
+            width: 22%;
             margin-top: 15%;
 
             .home_logo {
@@ -234,18 +234,13 @@
         }
 
         .home_page_body {
-            margin-top: 15%;
+            margin-top: 8%;
             margin-left: 5px;
             margin-right: 5px;
 
             .home_heading {
-                font-size: 30px;
-                line-height: 25px;
+                font-size: 35px;
                 letter-spacing: 0.04em;
-                box-shadow: none;
-                background-color: transparent;
-                background-image: none;
-                color: var(--color-red);
             }
 
             .home_body_text {
