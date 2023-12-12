@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import { Home, Login, SignUp } from './pages'
+import { ConfirmEmail, Home, Login, SignUp } from './pages'
 import { Footer, Alert } from './components'
 import emailjs from "@emailjs/browser";
 
@@ -109,7 +109,18 @@ function App() {
                         setAlertMessage={setAlertMessage}
                         sendEmail={sendEmail}
                     />
-                }/>
+                } />
+                <Route
+                    path="/confirm-email/*"
+                    element={
+                        <ConfirmEmail
+                            hideAlert={hideAlert}
+                            setAlertDisplay={setAlertDisplay}
+                            setAlertStatus={setAlertStatus}
+                            setAlertMessage={setAlertMessage}
+                        />
+                    }
+                />
             </Routes>
 
             <Footer />

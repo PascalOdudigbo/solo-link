@@ -51,7 +51,6 @@ function Login({ setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setA
 
   return (
     <div className="login_component_container">
-     
       <div className="login_form_Container">
         <img onClick={() => navigate("/")} className="login_logo" src={logo} alt="logo"/>
         <h1 className="login_text p__cormorant">LOGIN</h1>
@@ -84,7 +83,6 @@ function Login({ setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setA
           <Link className="sign_up_link custom__button" to={"/signUp"}>Sign Up</Link>
         </form>
       </div>
-
     </div>
   );
 }
