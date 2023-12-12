@@ -4,9 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Login({ setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setAlertMessage, verifyLoginStatus}) {
+  // declaring state variables to handle dynamic form inputs
   const [artistEmail, setArtistEmail] = useState("");
   const [artistPassword, setArtistPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  // defining a navigation variable function
   const navigate = useNavigate("");
 
 
@@ -15,7 +17,7 @@ function Login({ setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setA
   }, [verifyLoginStatus]);
 
   // A function to handle artist login
-  function handleOnSubmit(e) {
+  function handleLogin(e) {
     e.preventDefault();
     window.scrollTo(0, 0);
     setIsLoading(true);
@@ -29,7 +31,6 @@ function Login({ setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setA
       .then(res => {
         setIsLoading(false);
         setArtistData(res.data)
-        // localStorage.setItem("userId", JSON.stringify(res.data.id));
         setAlertStatus(true);
         setAlertDisplay("block");
         setAlertMessage("Login successful!");
@@ -54,7 +55,7 @@ function Login({ setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setA
       <div className="login_form_Container">
         <img onClick={() => navigate("/")} className="login_logo" src={logo} alt="logo"/>
         <h1 className="login_text p__cormorant">LOGIN</h1>
-        <form className="login_form" onSubmit={handleOnSubmit}>
+        <form className="login_form" onSubmit={handleLogin}>
 
           <div className="loginFormTextAndInputContainer">
             <p className="loginFormText">Email</p>

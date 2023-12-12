@@ -1,4 +1,4 @@
-.login_component_container {
+.signUpContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -10,7 +10,7 @@
   background-repeat: no-repeat;
   background-color: var(--color-white);
 
-  .login_form_Container {
+  .signUpFormContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +20,7 @@
     background-color: var(--color-white);
     box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
 
-    .login_logo {
+    .signUpLogo {
       margin-top: 10px;
       width: 100px;
       border-radius: 55%;
@@ -29,19 +29,19 @@
       cursor: pointer;
     }
 
-    .login_text {
+    .signUpText {
       margin-bottom: 10px;
       color: var(--color-black);
     }
 
-    .login_form {
+    .signUpForm {
       display: flex;
       flex-direction: column;
       text-align: left;
       width: 80%;
       margin-bottom: 20px;
 
-      .loginFormTextAndInputContainer {
+      .signUpFormTextAndInputContainer {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -53,7 +53,7 @@
           border: solid rgb(240, 240, 240) 2px;
         }
 
-        .loginFormText {
+        .signUpFormText {
           text-align: left;
           margin-top: 5px;
           margin-bottom: 0px;
@@ -64,7 +64,7 @@
 
         }
 
-        .loginFormInput {
+        .signUpFormInput {
           border: none;
           height: 30px;
           // margin-top: none;
@@ -83,18 +83,7 @@
         }
       }
 
-      .forgot_password_link {
-        font-size: 0.9em;
-        text-decoration: none;
-        margin-bottom: 10px;
-        margin-top: 5px;
-
-        &:hover{
-          color: var(--color-red)
-        }
-      }
-
-      .login_btn {
+      .signUpBtn {
         padding: 15px 12px;
         border-radius: 10px;
         margin-left: auto;
@@ -111,214 +100,159 @@
           transform: translateY(2px);
         }
       }
-
-      .or_text {
-        color: black;
-        text-align: center;
-        font-weight: bolder;
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
-
-      .sign_up_link {
-        color: white;
-        padding: 15px 12px;
-        border-radius: 10px;
-        text-align: center;
-        margin-top: 5px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 40%;
-        font-size: 1em;
-        background-color: black;
-        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgb(61, 61, 61) 0 -3px 0 inset;
-
-
-        &:hover {
-          background-color: #ff1616;
-          box-shadow: #D6D6E7 0 3px 7px inset;
-          transform: translateY(2px);
-        }
-      }
     }
+
   }
 
 }
-.login_component_container::-webkit-scrollbar {
+.signUpContainer::-webkit-scrollbar {
   display: none;
 }
 
+
 @media screen and (max-width: 2000px) {
-  .login_component_container {
+  .signUpContainer {
     background-size: 100% 90%;
-   
-    .login_form_Container {
+
+    .signUpFormContainer {
       width: 40%;
-  
-      .login_logo {
+
+      .signUpLogo {
         width: 100px;
       }
   
-      .login_form {
+      .signUpForm {
         width: 90%;
   
-        .loginFormTextAndInputContainer {
+        .signUpFormTextAndInputContainer {
   
-          .loginFormText {
-           font-weight: 600;
+          .signUpFormText {
+            font-weight: 600;
+  
           }
   
-          .loginFormInput {
+          .signUpFormInput {
             font-size: 1.2em;
           }
         }
   
-        .login_btn {
+        .signUpBtn {
           padding: 10px 8px;
           width: 25%;
         }
-  
-        .or_text {
-          
-        }
-  
-        .sign_up_link {
-          padding: 10px 8px;
-          width: 30%;
-        }
       }
+  
     }
   
   }
 }
 
 @media screen and (max-width: 1080px) {
-  .login_component_container {
+  .signUpContainer {
     background-size: 100% 70%;
-   
-    .login_form_Container {
+
+    .signUpFormContainer {
       width: 50%;
-  
-      .login_logo {
+
+      .signUpLogo {
         width: 80px;
       }
   
-      .login_form {
+      .signUpForm {
         width: 90%;
   
-        .loginFormTextAndInputContainer {
+        .signUpFormTextAndInputContainer {
   
-          .loginFormText {
-           font-weight: 600;
+          .signUpFormText {
+            font-weight: 600;
+  
           }
   
-          .loginFormInput {
+          .signUpFormInput {
             font-size: 1.2em;
           }
         }
   
-        .login_btn {
+        .signUpBtn {
           padding: 10px 8px;
           width: 35%;
         }
-  
-        .or_text {
-          
-        }
-  
-        .sign_up_link {
-          padding: 10px 8px;
-          width: 45%;
-        }
       }
+  
     }
   
   }
 }
 
 @media screen and (max-width: 900px) {
-  .login_component_container {
+  .signUpContainer {
     background-size: 100% 60%;
-   
-    .login_form_Container {
+
+    .signUpFormContainer {
       width: 60%;
-  
-      .login_logo {
+
+      .signUpLogo {
         width: 80px;
       }
   
-      .login_form {
+      .signUpForm {
         width: 90%;
   
-        .loginFormTextAndInputContainer {
+        .signUpFormTextAndInputContainer {
   
-          .loginFormText {
-           font-weight: 600;
+          .signUpFormText {
+            font-weight: 600;
+  
           }
   
-          .loginFormInput {
+          .signUpFormInput {
             font-size: 1.2em;
           }
         }
   
-        .login_btn {
+        .signUpBtn {
           padding: 10px 8px;
           width: 35%;
         }
-  
-        .or_text {
-          
-        }
-  
-        .sign_up_link {
-          padding: 10px 8px;
-          width: 45%;
-        }
       }
+  
     }
   
   }
 }
 
 @media screen and (max-width: 650px) {
-  .login_component_container {
+  .signUpContainer {
     background-size: 100% 40%;
-   
-    .login_form_Container {
+
+    .signUpFormContainer {
       width: 90%;
-  
-      .login_logo {
+
+      .signUpLogo {
         width: 80px;
       }
   
-      .login_form {
+      .signUpForm {
         width: 90%;
   
-        .loginFormTextAndInputContainer {
+        .signUpFormTextAndInputContainer {
   
-          .loginFormText {
-           font-weight: 600;
+          .signUpFormText {
+            font-weight: 600;
+  
           }
   
-          .loginFormInput {
+          .signUpFormInput {
             font-size: 1em;
           }
         }
   
-        .login_btn {
+        .signUpBtn {
           padding: 10px 8px;
           width: 35%;
         }
-  
-        .or_text {
-          
-        }
-  
-        .sign_up_link {
-          padding: 10px 8px;
-          width: 45%;
-        }
       }
+  
     }
   
   }
