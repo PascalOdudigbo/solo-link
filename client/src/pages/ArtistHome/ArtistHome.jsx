@@ -18,7 +18,11 @@ import {
 import { RiLogoutCircleRFill, RiAddCircleFill } from "react-icons/ri";
 import { IconContext } from "react-icons/lib";
 import Tooltip from "@mui/material/Tooltip";
-import { AddProject, AddProjectVideo, EditProject, EditProjectVideo, Search, ShareLinkForm } from "../../components";
+import { AddProject, 
+  // AddProjectVideo, EditProject, EditProjectVideo, 
+  Search
+  // , ShareLinkForm 
+} from "../../components";
 import ClipboardJS from "clipboard";
 
 
@@ -484,7 +488,7 @@ function ArtistHome({ verifyLoginStatus, artistData, setArtistData, hideAlert, s
             }
           />
 
-          <Route
+          {/* <Route
             path="/edit-project"
             element={
               <div className="artistHomeComponentContainer">
@@ -556,7 +560,7 @@ function ArtistHome({ verifyLoginStatus, artistData, setArtistData, hideAlert, s
                 />
               </div>
             }
-          />
+          /> */}
         </Routes>
 
 

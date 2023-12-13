@@ -1,0 +1,301 @@
+.addProjectFormContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 30%;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+
+    .addProjectFormCancelContainer {
+        width: 99%;
+
+        .cancelBtn {
+            background-color: transparent;
+            position: right;
+            border: none;
+            margin-top: 5px;
+            float: right;
+        }
+    }
+
+    .addProjectText {
+        margin-top: 40px;
+        margin-bottom: 15px;
+        text-align: center;
+        color: var(--color-black);
+    }
+
+    .addProjectForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 15px;
+        margin-right: 15px;
+        width: 90%;
+
+        .addProjectFormTextAndInputContainer {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+            border-radius: 5px;
+            margin-bottom: 15px;
+
+            &:hover {
+                border: solid rgb(240, 240, 240) 2px;
+            }
+
+            .addProjectFormText {
+                text-align: left;
+                margin-top: 5px;
+                margin-bottom: 0px;
+                margin-left: 5px;
+                font-size: 0.8em;
+                color: rgb(34, 34, 34);
+                padding: 0%;
+
+            }
+
+            .addProjectFormInput {
+                border: none;
+                height: 30px;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 1px;
+                font-size: 1.2em;
+                background-color: transparent;
+
+                &:focus {
+                    outline: none;
+                    background-color: transparent;
+                }
+
+            }
+        }
+
+
+        .addProjectSelectCoverArtContainer {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+
+            .addProjectFormLabels {
+                color: black;
+                text-align: left;
+                font-size: 1em;
+                margin-bottom: 2px;
+            }
+
+
+            .addProjectFormSelectCoverArtBtn {
+                cursor: pointer;
+                color: #feffff;
+                padding: 7px 6px;
+                border-radius: 10px;
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                text-decoration: none;
+                display: inline-block;
+                width: 15%;
+                font-style: bold;
+                font-size: large;
+                background-color: black;
+                max-width: 100px;
+                border: none;
+                box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgb(61, 61, 61) 0 -3px 0 inset;
+
+
+                &:hover {
+                    background-color: #ff1616;
+                    box-shadow: #D6D6E7 0 3px 7px inset;
+                    transform: translateY(2px);
+                }
+            }
+
+
+        }
+
+
+
+        .addProjectFormSaveBtn {
+            padding: 12px 10px;
+            border-radius: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            width: 20%;
+            background-color: var(--color-black);
+            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #bb1616 0 -3px 0 inset;
+
+
+            &:hover {
+                cursor: pointer;
+                background-color: var(--color-red);
+                box-shadow: #D6D6E7 0 3px 7px inset;
+                transform: translateY(2px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 2000px) {
+    .addProjectFormContainer {
+        width: 35%;
+    
+        .addProjectForm {
+    
+            .addProjectFormTextAndInputContainer {
+    
+                .addProjectFormText {
+                    font-weight: 600;
+                }
+    
+                .addProjectFormInput {
+                    font-size: 1em;
+                }
+            }
+    
+    
+            .addProjectSelectCoverArtContainer {
+    
+                .addProjectFormLabels {
+                    font-size: 0.9em;
+                }
+    
+    
+                .addProjectFormSelectCoverArtBtn {
+                    padding: 7px 6px;
+                    width: 15%;
+                }
+            }
+    
+            .addProjectFormSaveBtn {
+                padding: 10px 8px;
+                width: 20%;
+            }
+        }
+    }    
+}
+
+@media screen and (max-width: 1080px) {
+    .addProjectFormContainer {
+        width: 50%;
+    
+        .addProjectForm {
+    
+            .addProjectFormTextAndInputContainer {
+    
+                .addProjectFormText {
+                    font-weight: 600;
+                }
+    
+                .addProjectFormInput {
+                    font-size: 1em;
+                }
+            }
+    
+    
+            .addProjectSelectCoverArtContainer {
+    
+                .addProjectFormLabels {
+                    font-size: 0.9em;
+                }
+    
+    
+                .addProjectFormSelectCoverArtBtn {
+                    padding: 7px 6px;
+                    width: 15%;
+                }
+            }
+    
+            .addProjectFormSaveBtn {
+                padding: 10px 8px;
+                width: 20%;
+            }
+        }
+    }     
+}
+
+@media screen and (max-width: 900px) {
+    .addProjectFormContainer {
+        width: 60%;
+    
+        .addProjectForm {
+    
+            .addProjectFormTextAndInputContainer {
+    
+                .addProjectFormText {
+                    font-weight: 600;
+                }
+    
+                .addProjectFormInput {
+                    font-size: 1em;
+                }
+            }
+    
+    
+            .addProjectSelectCoverArtContainer {
+    
+                .addProjectFormLabels {
+                    font-size: 0.9em;
+                }
+    
+    
+                .addProjectFormSelectCoverArtBtn {
+                    padding: 7px 6px;
+                    width: 15%;
+                }
+            }
+    
+            .addProjectFormSaveBtn {
+                padding: 10px 8px;
+                width: 20%;
+            }
+        }
+    }   
+}
+
+@media screen and (max-width: 650px) {
+    .addProjectFormContainer {
+        width: 90%;
+    
+        .addProjectForm {
+    
+            .addProjectFormTextAndInputContainer {
+    
+                .addProjectFormText {
+                    font-weight: 600;
+                }
+    
+                .addProjectFormInput {
+                    font-size: 1em;
+                }
+            }
+    
+    
+            .addProjectSelectCoverArtContainer {
+    
+                .addProjectFormLabels {
+                    font-size: 0.9em;
+                }
+    
+    
+                .addProjectFormSelectCoverArtBtn {
+                    padding: 7px 6px;
+                    width: 15%;
+                }
+            }
+    
+            .addProjectFormSaveBtn {
+                padding: 10px 8px;
+                width: 20%;
+            }
+        }
+    }    
+}

@@ -87,8 +87,7 @@
         margin-right: 10%;
         background-color: black;
         border: none;
-        // font-family: "Lucida Console", "Courier New", monospace;
-        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,rgb(61, 61, 61) 0 -3px 0 inset;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #bb1616 0 -3px 0 inset;
       
 
         &:hover {
@@ -112,7 +111,7 @@
         background-color: black;
         border: none;
         // font-family: "Lucida Console", "Courier New", monospace;
-        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,rgb(61, 61, 61) 0 -3px 0 inset;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #bb1616 0 -3px 0 inset;
       
 
         &:hover {
@@ -136,7 +135,7 @@
         background-color: black;
         border: none;
         // font-family: "Lucida Console", "Courier New", monospace;
-        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,rgb(61, 61, 61) 0 -3px 0 inset;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #bb1616 0 -3px 0 inset;
       
 
         &:hover {
@@ -188,7 +187,7 @@
 @media screen and (max-width: 2000px) {
   .artistHomeContainer {
     .artistHomeProfileAndSocialsContainer {
-      width: 30%;
+      width: 25%;
       text-align: center;
       justify-content: center;
       align-items: center;
@@ -240,7 +239,7 @@
 @media screen and (max-width: 1080px) {
   .artistHomeContainer {
     .artistHomeProfileAndSocialsContainer {
-      width: 40%;
+      width: 30%;
       text-align: center;
       justify-content: center;
       align-items: center;
