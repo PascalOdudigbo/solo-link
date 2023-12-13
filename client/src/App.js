@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import { ConfirmEmail, ForgotPassword, Home, Login, ResetPassword, SignUp } from './pages'
+import { ArtistHome, ConfirmEmail, ForgotPassword, Home, Login, ResetPassword, SignUp } from './pages'
 import { Footer, Alert } from './components'
 import emailjs from "@emailjs/browser";
 
@@ -48,13 +48,12 @@ function App() {
         );
     }
 
-
-
     // A function to verify artist is logged in 
     const verifyLoginStatus = useCallback(() => {
-        fetch("/meArtist")
+        fetch("/artists_logged_in")
             .then(res => res.json())
             .then(artistData => {
+                console.log(artistData)
                 if (artistData?.id) {
                     if (artistData?.verified === true) {
                         setArtistData(artistData);
@@ -76,6 +75,7 @@ function App() {
                 hideAlert();
             })
     }, [hideAlert, navigate, setAlertDisplay, setArtistData])
+
 
     return (
         <>
@@ -143,8 +143,21 @@ function App() {
                         />
                     }
                 />
+                <Route
+                    path="/home/*"
+                    element={
+                        <ArtistHome
+                            verifyLoginStatus={verifyLoginStatus}
+                            artistData={artistData}
+                            setArtistData={setArtistData}
+                            hideAlert={hideAlert}
+                            setAlertDisplay={setAlertDisplay}
+                            setAlertStatus={setAlertStatus}
+                            setAlertMessage={setAlertMessage}
+                        />
+                    }
+                />
 
-                
 
 
             </Routes>

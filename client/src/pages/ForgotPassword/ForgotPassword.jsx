@@ -23,7 +23,7 @@ function ForgotPassword({ hideAlert, setAlertDisplay, setAlertStatus, setAlertMe
             email: artistEmail
         }
 
-        axios.post("/recover-account", artistData)
+        axios.post("/artists_recover_account", artistData)
             .then((res) => {
                 setIsLoading(false);
                 setAlertStatus(true);

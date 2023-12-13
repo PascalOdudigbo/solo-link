@@ -27,7 +27,7 @@ function Login({ setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setA
       password: artistPassword
     }
 
-    axios.post(`/login`, loginData)
+    axios.post(`/artists_login`, loginData)
       .then(res => {
         setIsLoading(false);
         setArtistData(res.data)
