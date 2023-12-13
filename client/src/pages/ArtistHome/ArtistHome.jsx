@@ -19,14 +19,17 @@ import { RiLogoutCircleRFill, RiAddCircleFill } from "react-icons/ri";
 import { IconContext } from "react-icons/lib";
 import Tooltip from "@mui/material/Tooltip";
 import { AddProject, 
-  // AddProjectVideo, EditProject, EditProjectVideo, 
+  Project,
+  // AddProjectVideo, 
+  EditProject, 
+  // EditProjectVideo, 
   Search
   // , ShareLinkForm 
 } from "../../components";
 import ClipboardJS from "clipboard";
 
 
-function ArtistHome({ verifyLoginStatus, artistData, setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setAlertMessage }) {
+function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setAlertMessage }) {
   const url = "https://solo-link.onrender.com";
   const clipboard = new ClipboardJS(".shareLinkFormCopyBtn");
 
@@ -79,6 +82,7 @@ function ArtistHome({ verifyLoginStatus, artistData, setArtistData, hideAlert, s
       setArtistProjects(filteredProjects);
     }
   };
+  console.log(artistProjects)
 
   // A function to handle logout
   const handleLogout = useCallback(async () => {
@@ -346,10 +350,39 @@ function ArtistHome({ verifyLoginStatus, artistData, setArtistData, hideAlert, s
     hideAlert();
   };
 
+  // A function to verify artist is logged in 
+  const verifyLoginStatus = useCallback(() => {
+      fetch("/artists_logged_in")
+          .then(res => res.json())
+          .then(artistData => {
+              console.log(artistData)
+              if (artistData?.id) {
+                  if (artistData?.verified === true) {
+                      setArtistData(artistData);
+                      setAllDataAgain(artistData)
+                      navigate("/home")
+                  } else {
+                      setAlertStatus(false);
+                      setAlertDisplay("block");
+                      setAlertMessage("Verification email sent, please verify your email address!");
+                      hideAlert();
+                      setTimeout(() => navigate("/"), 3000);
+                  }
+              }
+
+          })
+          .catch(error => {
+              setAlertStatus(false)
+              setAlertDisplay("block");
+              setAlertMessage(error);
+              hideAlert();
+          })
+  }, [hideAlert, navigate, setArtistData, setAllDataAgain, setAlertStatus, setAlertDisplay, setAlertMessage])
+
 
   useEffect(() => {
-    verifyLoginStatus();
-  }, []);
+    artistProjects === undefined && verifyLoginStatus();
+  }, [artistProjects, verifyLoginStatus]);
 
 
   return (
@@ -488,7 +521,7 @@ function ArtistHome({ verifyLoginStatus, artistData, setArtistData, hideAlert, s
             }
           />
 
-          {/* <Route
+          <Route
             path="/edit-project"
             element={
               <div className="artistHomeComponentContainer">
@@ -510,7 +543,7 @@ function ArtistHome({ verifyLoginStatus, artistData, setArtistData, hideAlert, s
               </div>
             }
           />
-
+{/* 
           <Route
             path="/add-project-video"
             element={
@@ -569,7 +602,7 @@ function ArtistHome({ verifyLoginStatus, artistData, setArtistData, hideAlert, s
 
           {/* A Container for all projects */}
           <div className="projectsListContainer">
-            {/* {artistProjects?.map((project) => (
+            {artistProjects?.map((project) => (
               <Project
                 key={project?.id}
                 title={project?.title}
@@ -638,7 +671,7 @@ function ArtistHome({ verifyLoginStatus, artistData, setArtistData, hideAlert, s
                   </Tooltip>
                 }
               />
-            ))} */}
+            ))}
           </div>
 
           <Tooltip title="Add project" arrow>

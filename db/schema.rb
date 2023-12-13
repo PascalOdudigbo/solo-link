@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_11_131309) do
     t.string "last_name"
     t.string "stage_name"
     t.string "email"
-    t.string "verified"
+    t.boolean "verified"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

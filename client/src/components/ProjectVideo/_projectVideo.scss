@@ -1,0 +1,65 @@
+.projectVideoContainer {
+  // background-color: red;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 500px;
+  margin-bottom: 20px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+
+  .VideoTitle {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .projectVideo{
+    width: 96%;
+    height: 320px;
+  }
+
+  .projectVideoButtonContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    .projectVideo {
+      width: 400px;
+      height: 300px;
+    }
+
+    .editVideoBtn {
+      margin-right: 50px;
+      font-size: 1em;
+      background-color: black;
+      padding: 7px 20px;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #ff1616;
+      }
+    }
+
+    .deleteVideoBtn {
+      font-size: 1em;
+      background-color: black;
+      padding: 7px 20px;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #ff1616;
+      }
+    }
+  }
+}

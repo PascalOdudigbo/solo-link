@@ -5,7 +5,7 @@ class CreateArtists < ActiveRecord::Migration[7.0]
       t.string :last_name
       t.string :stage_name
       t.string :email
-      t.string :verified
+      t.boolean :verified
       t.string :password_digest
 
       t.timestamps

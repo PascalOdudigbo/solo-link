@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
     @projects = ProjectService.listAll
 
     # Order the projects by time created
-    render json: @projectsorder(created_at: :desc)
+    render json: @projects.order(created_at: :desc)
   end
 
   # GET /projects/1
