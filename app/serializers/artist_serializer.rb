@@ -5,5 +5,4 @@ class ArtistSerializer < ActiveModel::Serializer
   has_many :projects do
     object.projects.order(created_at: :desc)
   end 
-  has_many :project_videos, through: :projects
 end

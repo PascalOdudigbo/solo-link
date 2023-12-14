@@ -57,7 +57,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
   const [videoLink, setVideoLink] = useState("");
   const [targetVideo, setTargetVideo] = useState({});
   const [shareLink, setShareLink] = useState(`${url}/view-artist/${artistData?.stage_name?.toLowerCase()}/${artistData?.id}`);
-
+  console.log(artistData)
   // configuring cloudinary
   cloudinary.config({
     cloud_name: process.env.REACT_APP_CLOUD_NAME,
@@ -66,7 +66,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
   });
 
   // A function to set all data again 
-  const setAllDataAgain = () => {
+  const setAllDataAgain = (artistData) => {
     setArtistProjects(artistData?.projects);
     setShareLink(`${url}/view-artist/${artistData?.stage_name?.toLowerCase()}/${artistData?.id}`);
   };
@@ -82,7 +82,6 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
       setArtistProjects(filteredProjects);
     }
   };
-  console.log(artistProjects)
 
   // A function to handle logout
   const handleLogout = useCallback(async () => {
@@ -195,9 +194,11 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
           setAlertStatus(true);
           setAlertDisplay("block");
           setAlertMessage("Project edited successfully!");
+          verifyLoginStatus();
           hideAlert();
           setAddProjectButtonDisplay("block");
-          verifyLoginStatus();
+
+          
         })
         .catch((error) => {
           setIsLoading(false);
@@ -211,7 +212,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
     } catch (err) {
       setAlertStatus(false);
       setAlertDisplay("block");
-      setAlertMessage(`${err}`);
+      setAlertMessage(err.message);
       hideAlert();
     }
   };
@@ -353,41 +354,42 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
   // A function to verify artist is logged in 
   const verifyLoginStatus = useCallback(() => {
       fetch("/artists_logged_in")
-          .then(res => res.json())
-          .then(artistData => {
-              console.log(artistData)
-              if (artistData?.id) {
-                  if (artistData?.verified === true) {
-                      setArtistData(artistData);
-                      setAllDataAgain(artistData)
-                      navigate("/home")
-                  } else {
-                      setAlertStatus(false);
-                      setAlertDisplay("block");
-                      setAlertMessage("Verification email sent, please verify your email address!");
-                      hideAlert();
-                      setTimeout(() => navigate("/"), 3000);
-                  }
-              }
-
-          })
-          .catch(error => {
-              setAlertStatus(false)
-              setAlertDisplay("block");
-              setAlertMessage(error);
-              hideAlert();
-          })
-  }, [hideAlert, navigate, setArtistData, setAllDataAgain, setAlertStatus, setAlertDisplay, setAlertMessage])
+      .then((res) => res.json())
+      .then((artistData) => {
+        if (artistData) {
+          if (artistData?.verified === true) {
+            setArtistData(artistData);
+            setAllDataAgain(artistData);
+          } else {
+            setAlertStatus(false);
+            setAlertDisplay("block");
+            setAlertMessage(
+              "Verification email sent, please verify your email address!"
+            );
+            hideAlert();
+            setTimeout(() => navigate("/"), 3000);
+          }
+        } else {
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        setAlertStatus(false);
+        setAlertDisplay("block");
+        setAlertMessage(error);
+        hideAlert();
+      });
+  }, [hideAlert, navigate, setAlertDisplay, setArtistData]);
 
 
   useEffect(() => {
-    artistProjects === undefined && verifyLoginStatus();
-  }, [artistProjects, verifyLoginStatus]);
+    verifyLoginStatus();
+  }, []);
 
 
   return (
     // Access control to limit access to artists that have logged in
-    // artistData?.verified === true && (
+    artistData?.verified === true && (
       <div className="artistHomeContainer">
 
         <div className="artistHomeProfileAndSocialsContainer">
@@ -696,7 +698,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
           </Tooltip>
         </div>
       </div>
-    // )
+    )
   );
 }
 export default ArtistHome;

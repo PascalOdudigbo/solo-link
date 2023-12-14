@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import { ArtistHome, ConfirmEmail, ForgotPassword, Home, Login, ResetPassword, SignUp } from './pages'
 import { Footer, Alert } from './components'
@@ -76,6 +76,9 @@ function App() {
             })
     }, [hideAlert, navigate, setAlertDisplay, setArtistData])
 
+    useEffect(() => {
+        verifyLoginStatus()
+    }, []);
 
     return (
         <>

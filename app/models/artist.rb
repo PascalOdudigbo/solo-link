@@ -6,8 +6,6 @@ class Artist < ApplicationRecord
     has_one :artists_profile, dependent: :destroy
     has_one :artists_social, dependent: :destroy
     has_many :projects, dependent: :destroy
-    has_many :project_videos, through: :projects
-
     
     # validating artist attributes
     validates :first_name, presence: true
