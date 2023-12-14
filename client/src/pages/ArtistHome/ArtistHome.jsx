@@ -20,7 +20,7 @@ import { IconContext } from "react-icons/lib";
 import Tooltip from "@mui/material/Tooltip";
 import { AddProject, 
   Project,
-  // AddProjectVideo, 
+  AddProjectVideo, 
   EditProject, 
   // EditProjectVideo, 
   Search
@@ -545,7 +545,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
               </div>
             }
           />
-{/* 
+
           <Route
             path="/add-project-video"
             element={
@@ -564,7 +564,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
             }
           />
 
-          <Route
+          {/* <Route
             path="/edit-project-video"
             element={
               <div className="artistHomeComponentContainer">
