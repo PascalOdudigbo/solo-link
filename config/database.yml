@@ -84,3 +84,4 @@ production:
   database: solo_link_production
   username: solo_link
   password: <%= ENV["SOLO_LINK_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
