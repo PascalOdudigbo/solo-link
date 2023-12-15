@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import { ArtistHome, ConfirmEmail, ForgotPassword, Home, Login, ResetPassword, SignUp } from './pages'
+import { ArtistHome, ConfirmEmail, EditProfile, ForgotPassword, Home, Login, ResetPassword, SignUp } from './pages'
 import { Footer, Alert } from './components'
 import emailjs from "@emailjs/browser";
 
@@ -71,6 +71,36 @@ function App() {
                 hideAlert();
             })
     }, [hideAlert, navigate, setAlertDisplay, setArtistData])
+
+    // A function to verify login status and set all artist data
+    const fetchArtistData = useCallback((setAllDataAgain) => {
+        fetch("/artists_logged_in")
+            .then((res) => res.json())
+            .then((artistData) => {
+                if (artistData) {
+                    if (artistData?.verified === true) {
+                        setArtistData(artistData);
+                        setAllDataAgain(artistData);
+                    } else {
+                        setAlertStatus(false);
+                        setAlertDisplay("block");
+                        setAlertMessage(
+                            "Verification email sent, please verify your email address!"
+                        );
+                        hideAlert();
+                        setTimeout(() => navigate("/"), 3000);
+                    }
+                } else {
+                    navigate("/");
+                }
+            })
+            .catch((error) => {
+                setAlertStatus(false);
+                setAlertDisplay("block");
+                setAlertMessage(error);
+                hideAlert();
+            });
+    }, [hideAlert, navigate, setAlertDisplay, setArtistData]);
 
     useEffect(() => {
         verifyLoginStatus()
@@ -146,13 +176,27 @@ function App() {
                     path="/home/*"
                     element={
                         <ArtistHome
-                            verifyLoginStatus={verifyLoginStatus}
+                            verifyLoginStatus={fetchArtistData}
                             artistData={artistData}
                             setArtistData={setArtistData}
                             hideAlert={hideAlert}
                             setAlertDisplay={setAlertDisplay}
                             setAlertStatus={setAlertStatus}
                             setAlertMessage={setAlertMessage}
+                        />
+                    }
+                />
+                <Route
+                    path="/edit-profile"
+                    element={
+                        <EditProfile
+                            artistData={artistData}
+                            setArtistData={setArtistData}
+                            hideAlert={hideAlert}
+                            setAlertDisplay={setAlertDisplay}
+                            setAlertStatus={setAlertStatus}
+                            setAlertMessage={setAlertMessage}
+                            fetchArtistData={fetchArtistData}
                         />
                     }
                 />

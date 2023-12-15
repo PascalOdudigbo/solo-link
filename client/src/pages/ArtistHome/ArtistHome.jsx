@@ -22,7 +22,7 @@ import { AddProject, Project, AddProjectVideo, EditProject, EditProjectVideo, Se
 import ClipboardJS from "clipboard";
 
 
-function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setAlertMessage }) {
+function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setAlertMessage, verifyLoginStatus}) {
   const url = "https://solo-link.onrender.com";
   new ClipboardJS(".shareLinkFormCopyBtn");
 
@@ -67,7 +67,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
   // A function to handle search
   const handleSearch = (searchData) => {
     if (searchData === "") {
-      verifyLoginStatus();
+      verifyLoginStatus(setAllDataAgain);
     } else {
       const filteredProjects = artistProjects?.filter((project) =>
         project?.title.toLowerCase().includes(searchData?.toLowerCase())
@@ -187,7 +187,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
           setAlertStatus(true);
           setAlertDisplay("block");
           setAlertMessage("Project edited successfully!");
-          verifyLoginStatus();
+          verifyLoginStatus(setAllDataAgain);
           hideAlert();
           setAddProjectButtonDisplay("block");
 
@@ -267,7 +267,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
         setAlertMessage("Video added successfully!");
         hideAlert();
         setAddProjectButtonDisplay("block");
-        verifyLoginStatus();
+        verifyLoginStatus(setAllDataAgain);
       })
       .catch((error) => {
         setIsLoading(false);
@@ -302,7 +302,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
         setAlertMessage("Video edited successfully!");
         hideAlert();
         setAddProjectButtonDisplay("block");
-        verifyLoginStatus();
+        verifyLoginStatus(setAllDataAgain);
       })
       .catch((error) => {
         setIsLoading(false);
@@ -323,7 +323,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
       setAlertDisplay("block");
       setAlertMessage(`Video deleted successfully!`);
       hideAlert();
-      verifyLoginStatus();
+      verifyLoginStatus(setAllDataAgain);
     });
   };
 
@@ -344,39 +344,8 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
     hideAlert();
   };
 
-  // A function to verify artist is logged in 
-  const verifyLoginStatus = useCallback(() => {
-      fetch("/artists_logged_in")
-      .then((res) => res.json())
-      .then((artistData) => {
-        if (artistData) {
-          if (artistData?.verified === true) {
-            setArtistData(artistData);
-            setAllDataAgain(artistData);
-          } else {
-            setAlertStatus(false);
-            setAlertDisplay("block");
-            setAlertMessage(
-              "Verification email sent, please verify your email address!"
-            );
-            hideAlert();
-            setTimeout(() => navigate("/"), 3000);
-          }
-        } else {
-          navigate("/");
-        }
-      })
-      .catch((error) => {
-        setAlertStatus(false);
-        setAlertDisplay("block");
-        setAlertMessage(error);
-        hideAlert();
-      });
-  }, [hideAlert, navigate, setAlertDisplay, setArtistData, setAlertStatus, setAlertMessage]);
-
-
   useEffect(() => {
-    verifyLoginStatus();
+    verifyLoginStatus(setAllDataAgain);
   }, []);
 
 

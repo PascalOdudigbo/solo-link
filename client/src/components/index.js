@@ -8,4 +8,6 @@ export {default as EditProject} from "./EditProject/EditProject";
 export {default as AddProjectVideo} from "./AddProjectVideo/AddProjectVideo";
 export {default as EditProjectVideo} from "./EditProjectVideo/EditProjectVideo";
 export {default as ShareLink} from "./ShareLink/ShareLink";
+export {default as ProfileForm} from "./ProfileForm/ProfileForm";
+export {default as SocialsForm} from "./SocialsForm/SocialsForm";
 
