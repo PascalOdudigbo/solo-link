@@ -66,7 +66,7 @@ class ArtistsController < ApplicationController
 
   #POST /artists_recover_account
   def recover_account
-    artist = ArtistService.recover_account(artist_params)
+    artist = ArtistService.accountRecovery(params)
     if artist.class != Hash
       render json: artist, status: :accepted
     else

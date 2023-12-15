@@ -22,12 +22,12 @@ import { AddProject, Project, AddProjectVideo, EditProject, EditProjectVideo, Se
 import ClipboardJS from "clipboard";
 
 
-function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setAlertMessage, verifyLoginStatus}) {
+function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setAlertMessage, verifyLoginStatus }) {
   const url = "https://solo-link.onrender.com";
   new ClipboardJS(".shareLinkFormCopyBtn");
 
   const navigate = useNavigate("");
-
+  // initializing icon styles
   const facebookIconStyle = { marginRight: "10px", color: "#4267B2" };
   const instagramIconStyle = { marginRight: "10px", color: "#E1306C" };
   const tiktokIconStyle = { marginRight: "10px", color: "black" };
@@ -37,8 +37,8 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
   const addProjectButtonIconStyle = { color: "white", borderRadius: "50%", boxShadow: "rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0" };
   const cancelButtonsIconStyle = { color: "#FF1616" };
 
+  // defining state variables
   const [addProjectButtonDisplay, setAddProjectButtonDisplay] = useState("block");
-
   const [projectTitle, setProjectTitle] = useState("");
   const [coverArt, setCoverArt] = useState("");
   const [projectLink, setProjectLink] = useState("");
@@ -160,52 +160,63 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
     e.preventDefault();
     window.scrollTo(0, 0);
     setIsLoading(true);
-    const data = new FormData();
-    data.append("file", coverArt);
-    data.append("upload_preset", process.env.REACT_APP_PRESET_NAME);
-    data.append("cloud_name", process.env.REACT_APP_CLOUD_NAME);
-    data.append("folder", "Solo-link");
+
     try {
-      const resp = await axios.post(
-        `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`,
-        data
-      );
-      deleteOldProjectImage();
+      if (coverArt && coverArt !== targetProject.cover_art) {
+        const data = new FormData();
+        data.append("file", coverArt);
+        data.append("upload_preset", process.env.REACT_APP_PRESET_NAME);
+        data.append("cloud_name", process.env.REACT_APP_CLOUD_NAME);
+        data.append("folder", "Solo-link");
 
+        const resp = await axios.post(
+          `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`,
+          data
+        );
 
-      const projectData = {
-        artist_id: artistData.id,
-        title: projectTitle,
-        project_url: projectLink,
-        cover_art: `${resp.data.url}`,
-        cover_art_public_id: `${resp.data.public_id}`,
-      };
-      axios
-        .patch(`/projects/${targetProject.id}`, projectData)
-        .then((res) => {
-          setIsLoading(false);
-          setAlertStatus(true);
-          setAlertDisplay("block");
-          setAlertMessage("Project edited successfully!");
-          verifyLoginStatus(setAllDataAgain);
-          hideAlert();
-          setAddProjectButtonDisplay("block");
+        // Delete old project image if it exists
+        deleteOldProjectImage();
 
-          
-        })
-        .catch((error) => {
-          setIsLoading(false);
-          if (error.response) {
-            setAlertStatus(false);
-            setAlertDisplay("block");
-            setAlertMessage(`${error.response.data.error}`);
-            hideAlert();
-          }
-        });
-    } catch (err) {
+        const projectData = {
+          artist_id: artistData.id,
+          title: projectTitle,
+          project_url: projectLink,
+          cover_art: `${resp.data.url}`,
+          cover_art_public_id: `${resp.data.public_id}`,
+        };
+
+        await axios.patch(`/projects/${targetProject.id}`, projectData);
+
+        setIsLoading(false);
+        setAlertStatus(true);
+        setAlertDisplay("block");
+        setAlertMessage("Project edited successfully!");
+        verifyLoginStatus(setAllDataAgain);
+        hideAlert();
+        setAddProjectButtonDisplay("block");
+      } else {
+        // If coverArt hasn't changed, proceed without uploading a new image
+        const projectData = {
+          artist_id: artistData.id,
+          title: projectTitle,
+          project_url: projectLink,
+        };
+
+        await axios.patch(`/projects/${targetProject.id}`, projectData);
+
+        setIsLoading(false);
+        setAlertStatus(true);
+        setAlertDisplay("block");
+        setAlertMessage("Project edited successfully!");
+        verifyLoginStatus(setAllDataAgain);
+        hideAlert();
+        setAddProjectButtonDisplay("block");
+      }
+    } catch (error) {
+      setIsLoading(false);
       setAlertStatus(false);
       setAlertDisplay("block");
-      setAlertMessage(err.message);
+      setAlertMessage(error.response?.data?.error || error.message);
       hideAlert();
     }
   };

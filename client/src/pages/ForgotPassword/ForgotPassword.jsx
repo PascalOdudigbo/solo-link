@@ -38,7 +38,7 @@ function ForgotPassword({ hideAlert, setAlertDisplay, setAlertStatus, setAlertMe
                 };
 
                 // sending account recovery email
-                sendEmail(emailValues, "Account recovery link sent!", () => { setTimeout(() => navigate("/"), 5000) })
+                sendEmail(process.env.REACT_APP_EMAILJS_RESET_PASSWORD_TEMPLATE_ID, emailValues, "Account recovery link sent!", () => { setTimeout(() => navigate("/"), 5000) })
             })
             .catch((error) => {
                 setIsLoading(false);

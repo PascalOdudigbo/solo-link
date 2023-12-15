@@ -23,9 +23,8 @@ function App() {
     }, []);
 
     //creating a function to send multi-factor auth email 
-    function sendEmail(emailValues, alertMessage, navigationFunction) {
+    function sendEmail(templateID, emailValues, alertMessage, navigationFunction) {
         const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-        const templateID = process.env.REACT_APP_EMAILJS_VERIFY_EMAIL_TEMPLATE_ID;
         const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
         emailjs.send(serviceID, templateID, emailValues, publicKey).then(
@@ -53,7 +52,7 @@ function App() {
                 if (artistData?.id) {
                     if (artistData?.verified === true) {
                         setArtistData(artistData);
-                        navigate("/home")
+                        window.location.href.includes("signUp") || window.location.href.includes("login") && navigate("/home")
                     } else {
                         setAlertStatus(false);
                         setAlertDisplay("block");
@@ -158,6 +157,9 @@ function App() {
                             hideAlert={hideAlert}
                             alertDisplay={alertDisplay}
                             setAlertDisplay={setAlertDisplay}
+                            setAlertStatus={setAlertStatus}
+                            setAlertMessage={setAlertMessage}
+                            sendEmail={sendEmail}
                         />
                     }
                 />

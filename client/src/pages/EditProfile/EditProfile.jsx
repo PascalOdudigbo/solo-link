@@ -7,7 +7,7 @@ import Tooltip from "@mui/material/Tooltip";
 import { IconContext } from "react-icons/lib";
 import { ProfileForm, SocialsForm } from "../../components";
 
-
+// cloudinary configuartion
 cloudinary.config({
     cloud_name: process.env.REACT_APP_CLOUD_NAME,
     api_key: process.env.REACT_APP_API_KEY,
@@ -15,8 +15,9 @@ cloudinary.config({
 });
 
 function EditProfile({ artistData, setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setAlertMessage, fetchArtistData }) {
+    // defining state variables 
     const [profilePictureUrl, setProfilePictureUrl] = useState(artistData?.artists_profile?.artist_image);
-    const [profilePicture, setProfilePicture] = useState({})
+    const [profilePicture, setProfilePicture] = useState(null)
     const [bio, setBio] = useState(artistData?.artists_profile?.bio);
     const [facebookLink, setFacebookLink] = useState(artistData?.artists_social?.facebook);
     const [instagramLink, setInstagramLink] = useState(artistData?.artists_social?.instagram);
@@ -26,6 +27,7 @@ function EditProfile({ artistData, setArtistData, hideAlert, setAlertDisplay, se
 
     const ButtonsIconStyle = { color: "white" };
     const uploadButtonRef = useRef(null);
+    // defining navigation variable function
     const navigate = useNavigate();
 
     // code to delete old profile picture that was uploaded on cloudinary
@@ -61,61 +63,58 @@ function EditProfile({ artistData, setArtistData, hideAlert, setAlertDisplay, se
     const handleEditProfile = async (setIsLoading) => {
         window.scrollTo(0, 0);
         setIsLoading(true);
-
-        const hasProfile = artistData?.artists_profile !== null;
-        const profileData = {
+      
+        try {
+          const hasProfile = artistData?.artists_profile !== null;
+      
+          const profileData = {
             artist_id: artistData.id,
             artist_image: null,
             image_public_id: null,
             bio: bio,
-        };
-
-        if (profilePicture !== undefined && profilePicture !== null) {
+          };
+      
+          if (profilePicture && profilePicture !== artistData?.artists_profile?.artist_image) {
             const data = new FormData();
             data.append("file", profilePicture);
             data.append("upload_preset", process.env.REACT_APP_PRESET_NAME);
             data.append("cloud_name", process.env.REACT_APP_CLOUD_NAME);
             data.append("folder", "Solo-link");
-
-            try {
-                const resp = await axios.post(
-                    `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`,
-                    data
-                );
-
-                deleteOldImage();
-                profileData.artist_image = `${resp.data.url}`;
-                profileData.image_public_id = `${resp.data.public_id}`;
-            } catch (err) {
-                setAlertStatus(false);
-                setAlertDisplay("block");
-                setAlertMessage(`${err}`);
-                hideAlert();
-                return;
-            }
-        }
-
-        try {
-            const axiosMethod = hasProfile ? axios.patch : axios.post;
-            await axiosMethod(hasProfile ? `artists_profiles/${artistData?.artists_profile?.id}` : `artists_profiles`, profileData);
-
-            setIsLoading(false);
-            setAlertStatus(true);
-            setAlertDisplay("block");
-            setAlertMessage("Profile update successful!");
-            hideAlert();
-            fetchArtistData(setAllDataAgain);
-
+      
+            const resp = await axios.post(
+              `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`,
+              data
+            );
+      
+            // Delete old profile image if it exists
+            deleteOldImage();
+      
+            profileData.artist_image = `${resp.data.url}`;
+            profileData.image_public_id = `${resp.data.public_id}`;
+          }
+      
+          const axiosMethod = hasProfile ? axios.patch : axios.post;
+          const endpoint = hasProfile ? `artists_profiles/${artistData?.artists_profile?.id}` : `artists_profiles`;
+      
+          await axiosMethod(endpoint, profileData);
+      
+          setIsLoading(false);
+          setAlertStatus(true);
+          setAlertDisplay("block");
+          setAlertMessage("Profile update successful!");
+          hideAlert();
+          fetchArtistData(setAllDataAgain);
         } catch (error) {
-            setIsLoading(false);
-            if (error.response) {
-                setAlertStatus(false);
-                setAlertDisplay("block");
-                setAlertMessage(`${error.response.data.error}`);
-                hideAlert();
-            }
+          setIsLoading(false);
+          if (error.response) {
+            setAlertStatus(false);
+            setAlertDisplay("block");
+            setAlertMessage(error.response.data.error);
+            hideAlert();
+          }
         }
-    };
+      };
+      
 
     // A function to handle editting artist socials
     const handleEditSocials = async (setIsLoading) => {

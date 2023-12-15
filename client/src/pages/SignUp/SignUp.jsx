@@ -63,7 +63,7 @@ function SignUp({setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setA
           };
 
           // sending email confirmation email
-          sendEmail(emailValues, "Email confirmation link sent!", ()=>{setTimeout(() => navigate("/"), 4000)})
+          sendEmail(process.env.REACT_APP_EMAILJS_VERIFY_EMAIL_TEMPLATE_ID, emailValues, "Email confirmation link sent!", ()=>{setTimeout(() => navigate("/"), 4000)})
         })
         .catch((error) => {
           setIsLoading(false);

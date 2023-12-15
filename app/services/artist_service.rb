@@ -49,7 +49,7 @@ class ArtistService
 
     # A function to enable account recovery
     def self.accountRecovery(artist_params)
-        artist = ArtistRepository.find_by_attribute(email: artist_params[:email])
+        artist = ArtistRepository.find_by_attribute("email", artist_params[:email])
         if artist != nil
           artist
         else
