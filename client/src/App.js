@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import { ArtistHome, ConfirmEmail, EditProfile, ForgotPassword, Home, Login, ResetPassword, SignUp } from './pages'
+import { ArtistHome, ConfirmEmail, EditProfile, FansViewArtists, ForgotPassword, Home, Login, ResetPassword, SignUp } from './pages'
 import { Footer, Alert } from './components'
 import emailjs from "@emailjs/browser";
 
@@ -199,6 +199,13 @@ function App() {
                             fetchArtistData={fetchArtistData}
                         />
                     }
+                />
+                <Route
+                    path="/view-artist/*"
+                    element={
+                        <FansViewArtists/>
+                    }
+
                 />
 
 

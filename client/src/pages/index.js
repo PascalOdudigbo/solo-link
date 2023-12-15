@@ -6,3 +6,4 @@ export {default as ForgotPassword} from "./ForgotPassword/ForgotPassword";
 export {default as ResetPassword} from "./ResetPassword/ResetPassword";
 export {default as ArtistHome} from "./ArtistHome/ArtistHome";
 export {default as EditProfile} from "./EditProfile/EditProfile";
+export {default as FansViewArtists} from "./FansViewArtists/FansViewArtists";
