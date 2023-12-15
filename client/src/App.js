@@ -52,7 +52,7 @@ function App() {
                 if (artistData?.id) {
                     if (artistData?.verified === true) {
                         setArtistData(artistData);
-                        window.location.href.includes("signUp") || window.location.href.includes("login") && navigate("/home")
+                        (window.location.href.includes("signUp") || window.location.href.includes("login")) && navigate("/home")
                     } else {
                         setAlertStatus(false);
                         setAlertDisplay("block");
