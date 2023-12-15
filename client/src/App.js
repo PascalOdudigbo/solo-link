@@ -19,10 +19,7 @@ function App() {
             () => {
                 setAlertDisplay("none");
                 clearTimeout(timeOut);
-            },
-            1000,
-            setAlertDisplay
-        );
+            }, 1000, setAlertDisplay);
     }, []);
 
     //creating a function to send multi-factor auth email 
@@ -53,7 +50,6 @@ function App() {
         fetch("/artists_logged_in")
             .then(res => res.json())
             .then(artistData => {
-                console.log(artistData)
                 if (artistData?.id) {
                     if (artistData?.verified === true) {
                         setArtistData(artistData);

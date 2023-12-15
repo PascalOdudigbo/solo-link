@@ -18,15 +18,13 @@ import {
 import { RiLogoutCircleRFill, RiAddCircleFill } from "react-icons/ri";
 import { IconContext } from "react-icons/lib";
 import Tooltip from "@mui/material/Tooltip";
-import { AddProject, Project, AddProjectVideo, EditProject, EditProjectVideo, Search
-  // , ShareLinkForm 
-} from "../../components";
+import { AddProject, Project, AddProjectVideo, EditProject, EditProjectVideo, Search, ShareLink } from "../../components";
 import ClipboardJS from "clipboard";
 
 
 function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setAlertMessage }) {
   const url = "https://solo-link.onrender.com";
-  const clipboard = new ClipboardJS(".shareLinkFormCopyBtn");
+  new ClipboardJS(".shareLinkFormCopyBtn");
 
   const navigate = useNavigate("");
 
@@ -374,7 +372,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
         setAlertMessage(error);
         hideAlert();
       });
-  }, [hideAlert, navigate, setAlertDisplay, setArtistData]);
+  }, [hideAlert, navigate, setAlertDisplay, setArtistData, setAlertStatus, setAlertMessage]);
 
 
   useEffect(() => {
@@ -577,11 +575,11 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
             }
           />
 
-          {/* <Route
+          <Route
             path="/share-link"
             element={
               <div className="artistHomeComponentContainer">
-                <ShareLinkForm
+                <ShareLink
                   handleCancel={handleCancel}
                   cancelButtonsIconStyle={cancelButtonsIconStyle}
                   handleShareLink={handleShareLink}
@@ -590,7 +588,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
                 />
               </div>
             }
-          /> */}
+          />
         </Routes>
 
 

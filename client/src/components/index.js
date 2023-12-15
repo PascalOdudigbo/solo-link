@@ -7,5 +7,5 @@ export {default as ProjectVideo} from "./ProjectVideo/ProjectVideo";
 export {default as EditProject} from "./EditProject/EditProject";
 export {default as AddProjectVideo} from "./AddProjectVideo/AddProjectVideo";
 export {default as EditProjectVideo} from "./EditProjectVideo/EditProjectVideo";
-// export {default as ShareLinkForm} from "./ShareLinkForm/ShareLinkForm";
+export {default as ShareLink} from "./ShareLink/ShareLink";
 
