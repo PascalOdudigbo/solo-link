@@ -102,7 +102,7 @@ function App() {
     }, [hideAlert, navigate, setAlertDisplay, setArtistData]);
 
     useEffect(() => {
-        verifyLoginStatus()
+        // verifyLoginStatus()
     }, []);
 
     return (

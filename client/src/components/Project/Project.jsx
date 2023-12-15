@@ -2,11 +2,11 @@ import { Tooltip } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
-import {IoMdArrowDropdownCircle, IoMdArrowDroprightCircle} from "react-icons/io";
+import { IoMdArrowDropdownCircle, IoMdArrowDroprightCircle } from "react-icons/io";
 
 import { IconContext } from "react-icons/lib";
 import { useNavigate } from "react-router-dom";
-import {ProjectVideo} from "../../components";
+import { ProjectVideo } from "../../components";
 
 function Project({
   ProjectId,
@@ -25,7 +25,7 @@ function Project({
   userType
 }) {
   const ButtonsIconStyle = { color: "white" };
-  const ShowOrHideButtonsIconStyle = {color: "black"};
+  const ShowOrHideButtonsIconStyle = { color: "black" };
   const [projectVideosListDisplay, setProjectVideosListDisplay] = useState("none");
   const navigate = useNavigate();
 
@@ -65,7 +65,7 @@ function Project({
           </IconContext.Provider>
         </button>
       </Tooltip>}
-      <div className="projectVideosList" id={`${ProjectId}`} style={{display: projectVideosListDisplay}}>
+      <div className="projectVideosList" id={`${ProjectId}`} style={{ display: projectVideosListDisplay }}>
         {projectVideos?.map((video) => (
           <ProjectVideo
             key={video?.id}
@@ -73,7 +73,7 @@ function Project({
             videoTitle={video?.video_title}
             VideoUrl={video?.video_url}
             editButton={
-              userType=== "artist" && <Tooltip title="Edit video" arrow>
+              userType === "artist" && <Tooltip title="Edit video" arrow>
                 <button
                   onClick={() => {
                     window.scrollTo(10, 10);
