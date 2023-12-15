@@ -23,7 +23,7 @@ import ClipboardJS from "clipboard";
 
 
 function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setAlertMessage, verifyLoginStatus }) {
-  const url = "https://solo-link.onrender.com";
+  const url = "https://solo-link-wad4.onrender.com/";
   new ClipboardJS(".shareLinkFormCopyBtn");
 
   const navigate = useNavigate("");

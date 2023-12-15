@@ -16,7 +16,7 @@ function SignUp({setArtistData, hideAlert, setAlertDisplay, setAlertStatus, setA
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const deployedURL = "https://solo-link.onrender.com"
+  const deployedURL = "https://solo-link-wad4.onrender.com/"
 
   // A function to handle signup
   function handleSignUp(e) {

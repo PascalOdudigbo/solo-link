@@ -12,7 +12,7 @@ function ForgotPassword({ hideAlert, setAlertDisplay, setAlertStatus, setAlertMe
     // declaring state variables to handle dynamic form inputs
     const [artistEmail, setArtistEmail] = useState("");
 
-    const deployedURL = "https://solo-link.onrender.com"
+    const deployedURL = "https://solo-link-wad4.onrender.com/"
 
     // A function to handle account recovery
     function handleAccountRecovery(e) {
