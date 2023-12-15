@@ -5,28 +5,28 @@
   "proxy": "http://localhost:3000",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.10.15",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.0",
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.1",
     "axios": "^1.6.2",
     "clipboard": "^2.0.11",
-    "cloudinary": "^1.32.0",
-    "dotenv": "^16.0.3",
+    "cloudinary": "^1.41.0",
+    "dotenv": "^16.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
-    "react-router-dom": "^6.20.1",
-    "react-scripts": "4.0.3",
+    "react-router-dom": "^6.21.0",
+    "react-scripts": "5.0.1",
     "sass": "^1.69.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^3.5.0"
   },
   "scripts": {
-    "build": "react-scripts build",
-    "start": "PORT=4000 react-scripts start",
-    "test": "react-scripts test",
+    "start": "PORT=4000 react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -48,7 +48,20 @@
     ]
   },
   "devDependencies": {
+    "assert": "^2.1.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "fs": "^0.0.1-security",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
     "prettier-plugin-tailwindcss": "^0.5.9",
-    "tailwindcss": "^3.3.6"
+    "process": "^0.11.10",
+    "querystring-es3": "^0.2.1",
+    "react-app-rewired": "^2.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "tailwindcss": "^3.3.6",
+    "url": "^0.11.3"
   }
 }
