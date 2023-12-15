@@ -18,12 +18,7 @@ import {
 import { RiLogoutCircleRFill, RiAddCircleFill } from "react-icons/ri";
 import { IconContext } from "react-icons/lib";
 import Tooltip from "@mui/material/Tooltip";
-import { AddProject, 
-  Project,
-  AddProjectVideo, 
-  EditProject, 
-  // EditProjectVideo, 
-  Search
+import { AddProject, Project, AddProjectVideo, EditProject, EditProjectVideo, Search
   // , ShareLinkForm 
 } from "../../components";
 import ClipboardJS from "clipboard";
@@ -57,7 +52,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
   const [videoLink, setVideoLink] = useState("");
   const [targetVideo, setTargetVideo] = useState({});
   const [shareLink, setShareLink] = useState(`${url}/view-artist/${artistData?.stage_name?.toLowerCase()}/${artistData?.id}`);
-  console.log(artistData)
+
   // configuring cloudinary
   cloudinary.config({
     cloud_name: process.env.REACT_APP_CLOUD_NAME,
@@ -564,7 +559,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
             }
           />
 
-          {/* <Route
+          <Route
             path="/edit-project-video"
             element={
               <div className="artistHomeComponentContainer">
@@ -582,7 +577,7 @@ function ArtistHome({ artistData, setArtistData, hideAlert, setAlertDisplay, set
             }
           />
 
-          <Route
+          {/* <Route
             path="/share-link"
             element={
               <div className="artistHomeComponentContainer">

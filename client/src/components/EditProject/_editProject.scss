@@ -145,118 +145,121 @@
 }
 
 @media screen and (max-width: 2000px) {
-    .addProjectFormContainer {
+    .editProjectFormContainer {
         width: 35%;
 
-        .addProjectForm {
+        .editProjectText {
+            font-size: 1.2em;
+        }
+        
+        .editProjectFormTextAndInputContainer {
 
-            .addProjectFormTextAndInputContainer {
+            .editProjectFormText {
+                font-weight: 600;
+            }
 
-                .addProjectFormText {
-                    font-weight: 600;
-                }
+            .editProjectFormInput {
+                font-size: 1em;
+            }
+        }
 
-                .addProjectFormInput {
-                    font-size: 1em;
-                }
+
+        .editProjectSelectCoverArtContainer {
+
+            .editProjectFormLabels {
+                font-size: 0.9em;
             }
 
 
-            .addProjectSelectCoverArtContainer {
-
-                .addProjectFormLabels {
-                    font-size: 0.9em;
-                }
-
-
-                .addProjectFormSelectCoverArtBtn {
-                    padding: 7px 6px;
-                    width: 15%;
-                }
+            .editProjectFormSelectCoverArtBtn {
+                padding: 7px 6px;
+                width: 15%;
             }
+        }
 
-            .addProjectFormSaveBtn {
-                padding: 10px 8px;
-                width: 20%;
-            }
+        .editProjectFormSaveBtn {
+            padding: 10px 8px;
+            width: 20%;
         }
     }
 }
 
 @media screen and (max-width: 1080px) {
-    .addProjectFormContainer {
+    .editProjectFormContainer {
         width: 50%;
 
-        .addProjectForm {
+        .editProjectText {
+            font-size: 1.2em;
+        }
 
-            .addProjectFormTextAndInputContainer {
+        .editProjectFormTextAndInputContainer {
 
-                .addProjectFormText {
-                    font-weight: 600;
-                }
+            .editProjectFormText {
+                font-weight: 600;
+            }
 
-                .addProjectFormInput {
-                    font-size: 1em;
-                }
+            .editProjectFormInput {
+                font-size: 1em;
+            }
+        }
+
+
+        .editProjectSelectCoverArtContainer {
+
+            .editProjectFormLabels {
+                font-size: 0.9em;
             }
 
 
-            .addProjectSelectCoverArtContainer {
-
-                .addProjectFormLabels {
-                    font-size: 0.9em;
-                }
-
-
-                .addProjectFormSelectCoverArtBtn {
-                    padding: 7px 6px;
-                    width: 15%;
-                }
+            .editProjectFormSelectCoverArtBtn {
+                padding: 7px 6px;
+                width: 15%;
             }
+        }
 
-            .addProjectFormSaveBtn {
-                padding: 10px 8px;
-                width: 20%;
-            }
+        .editProjectFormSaveBtn {
+            padding: 10px 8px;
+            width: 20%;
         }
     }
 }
 
 @media screen and (max-width: 900px) {
-    .addProjectFormContainer {
+    .editProjectFormContainer {
         width: 60%;
 
-        .addProjectForm {
+        .editProjectText {
+            font-size: 1.2em;
+        }
 
-            .addProjectFormTextAndInputContainer {
+        .editProjectFormTextAndInputContainer {
 
-                .addProjectFormText {
-                    font-weight: 600;
-                }
+            .editProjectFormText {
+                font-weight: 600;
+            }
 
-                .addProjectFormInput {
-                    font-size: 1em;
-                }
+            .editProjectFormInput {
+                font-size: 1em;
+            }
+        }
+
+
+        .editProjectSelectCoverArtContainer {
+
+            .editProjectFormLabels {
+                font-size: 0.9em;
             }
 
 
-            .addProjectSelectCoverArtContainer {
-
-                .addProjectFormLabels {
-                    font-size: 0.9em;
-                }
-
-
-                .addProjectFormSelectCoverArtBtn {
-                    padding: 7px 6px;
-                    width: 15%;
-                }
+            .editProjectFormSelectCoverArtBtn {
+                padding: 7px 6px;
+                width: 15%;
             }
+        }
 
-            .addProjectFormSaveBtn {
-                padding: 10px 8px;
-                width: 20%;
-            }
+        .editProjectFormSaveBtn {
+            padding: 10px 8px;
+            width: 20%;
         }
     }
 }
@@ -264,6 +267,10 @@
 @media screen and (max-width: 650px) {
     .editProjectFormContainer {
         width: 90%;
+
+        .editProjectText {
+            font-size: 1.2em;
+        }
 
         .editProjectFormTextAndInputContainer {
 

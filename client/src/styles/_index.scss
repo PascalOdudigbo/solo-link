@@ -11,8 +11,10 @@
 @import "../components/Search/search";
 @import "../components/AddProject/addProject";
 @import "../components/Project/project";
+@import "../components/ProjectVideo/projectVideo";
 @import "../components/EditProject/editProject";
 @import "../components/AddProjectVideo/addProjectVideo";
+@import "../components/EditProjectVideo/editProjectVideo";
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
@@ -74,4 +76,20 @@ a {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
+}
+
+.loader {
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid var(--color-white); /* Light grey */
+  border-top: 5px solid var(--color-black); /* Blue */
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
 }

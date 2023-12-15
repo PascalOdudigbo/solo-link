@@ -146,155 +146,171 @@
 @media screen and (max-width: 2000px) {
     .addProjectFormContainer {
         width: 35%;
-    
+
+        .addProjectText {
+            font-size: 1.2em;
+        }
+
         .addProjectForm {
-    
+
             .addProjectFormTextAndInputContainer {
-    
+
                 .addProjectFormText {
                     font-weight: 600;
                 }
-    
+
                 .addProjectFormInput {
                     font-size: 1em;
                 }
             }
-    
-    
+
+
             .addProjectSelectCoverArtContainer {
-    
+
                 .addProjectFormLabels {
                     font-size: 0.9em;
                 }
-    
-    
+
+
                 .addProjectFormSelectCoverArtBtn {
                     padding: 7px 6px;
                     width: 15%;
                 }
             }
-    
+
             .addProjectFormSaveBtn {
                 padding: 10px 8px;
                 width: 20%;
             }
         }
-    }    
+    }
 }
 
 @media screen and (max-width: 1080px) {
     .addProjectFormContainer {
         width: 50%;
-    
+
+        .addProjectText {
+            font-size: 1.2em;
+        }
+
         .addProjectForm {
-    
+
             .addProjectFormTextAndInputContainer {
-    
+
                 .addProjectFormText {
                     font-weight: 600;
                 }
-    
+
                 .addProjectFormInput {
                     font-size: 1em;
                 }
             }
-    
-    
+
+
             .addProjectSelectCoverArtContainer {
-    
+
                 .addProjectFormLabels {
                     font-size: 0.9em;
                 }
-    
-    
+
+
                 .addProjectFormSelectCoverArtBtn {
                     padding: 7px 6px;
                     width: 15%;
                 }
             }
-    
+
             .addProjectFormSaveBtn {
                 padding: 10px 8px;
                 width: 20%;
             }
         }
-    }     
+    }
 }
 
 @media screen and (max-width: 900px) {
     .addProjectFormContainer {
         width: 60%;
-    
+
+        .addProjectText {
+            font-size: 1.2em;
+        }
+
         .addProjectForm {
-    
+
             .addProjectFormTextAndInputContainer {
-    
+
                 .addProjectFormText {
                     font-weight: 600;
                 }
-    
+
                 .addProjectFormInput {
                     font-size: 1em;
                 }
             }
-    
-    
+
+
             .addProjectSelectCoverArtContainer {
-    
+
                 .addProjectFormLabels {
                     font-size: 0.9em;
                 }
-    
-    
+
+
                 .addProjectFormSelectCoverArtBtn {
                     padding: 7px 6px;
                     width: 15%;
                 }
             }
-    
+
             .addProjectFormSaveBtn {
                 padding: 10px 8px;
                 width: 20%;
             }
         }
-    }   
+    }
 }
 
 @media screen and (max-width: 650px) {
     .addProjectFormContainer {
         width: 90%;
-    
+
+        .addProjectText {
+            font-size: 1.2em;
+        }
+
         .addProjectForm {
-    
+
             .addProjectFormTextAndInputContainer {
-    
+
                 .addProjectFormText {
                     font-weight: 600;
                 }
-    
+
                 .addProjectFormInput {
                     font-size: 1em;
                 }
             }
-    
-    
+
+
             .addProjectSelectCoverArtContainer {
-    
+
                 .addProjectFormLabels {
                     font-size: 0.9em;
                 }
-    
-    
+
+
                 .addProjectFormSelectCoverArtBtn {
                     padding: 7px 6px;
                     width: 15%;
                 }
             }
-    
+
             .addProjectFormSaveBtn {
                 padding: 10px 8px;
                 width: 20%;
             }
         }
-    }    
+    }
 }
